@@ -2,16 +2,32 @@
 
 # Fletch
 
-Fletch is a wallet-native app for Robinhood Chain (mainnet 4663, testnet 46630). Describe an app and Fletch writes the contract and the page, compiles and tests it with Foundry, deploys it to testnet and hosts it. Point a watcher at a verified asset and it messages you on Telegram. The registry keeps every Stock Token on the chain verified and live, with a public API.
+Fletch turns a prompt into an app for Robinhood Chain (mainnet 4663, testnet 46630).
+Builds save project files and conversation progress, run generated code in Docker,
+and report compiler/test results and actual hosting or deployment outcomes.
+Choose a platform model or connect an OpenAI, Anthropic or Kimi account. Own-key
+model usage is billed by that provider. Text and native image references are
+supported when the selected connection exposes those capabilities; availability
+and limits are shown in the app.
 
-The repositories here are the parts worth reading and reusing:
+The registry publishes observed token identity, trust, prices, pools and activity
+through a public API. Its jobs and historical scans have different coverage. Check
+[live status](https://fletch.now/api/v1/status), each observation timestamp and
+`stateCurrent` before using a price. A timely job does not mean every token is
+verified or every figure is current. Watchers deliver supported events through
+Telegram or signed webhooks.
 
-| Repository | What it is |
+| Repository | Contents |
 | --- | --- |
-| [fletch-mcp](https://github.com/fletch-now/fletch-mcp) | The registry as MCP tools for Claude, Cursor and any other MCP client. |
-| [fletch-api](https://github.com/fletch-now/fletch-api) | The OpenAPI spec, the event vocabulary, the freshness guide, webhook verifiers in TypeScript, Python and Go, and a generated TypeScript SDK. |
-| [fletch-registry-data](https://github.com/fletch-now/fletch-registry-data) | Daily git snapshots of every asset, lookalike and registry event, pulled from the public API, with provenance. |
+| [fletch-mcp](https://github.com/fletch-now/fletch-mcp) | Explicit registry reads for MCP clients, with bounded queries and trust/freshness guidance. |
+| [fletch-api](https://github.com/fletch-now/fletch-api) | Dated public OpenAPI snapshots, generated TypeScript types, API/freshness guides and webhook verifiers. |
+| [fletch-registry-data](https://github.com/fletch-now/fletch-registry-data) | Daily asset, lookalike and event snapshots with provenance; snapshot timestamps are not live observation times. |
 
-Links: [fletch.now](https://fletch.now) · [Developers](https://fletch.now/developers) · [API docs](https://fletch.now/api/v1/docs) · [Registry](https://fletch.now/registry) · [llms.txt](https://fletch.now/llms.txt)
+Start with [fletch.now](https://fletch.now), [Developers](https://fletch.now/developers),
+[API docs](https://fletch.now/api/v1/docs), [Registry](https://fletch.now/registry),
+[agent skill](https://fletch.now/skill.md), [agent overview](https://fletch.now/llms.txt) or the
+[full agent reference](https://fletch.now/llms-full.txt).
+The MCP package can be run from GitHub with `npx -y github:fletch-now/fletch-mcp`;
+npm publication remains pending as of 8 September 2026.
 
 Fletch is not affiliated with Robinhood Markets, Inc.
