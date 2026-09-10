@@ -23,6 +23,10 @@ Telegram or signed webhooks.
 | [fletch-api](https://github.com/fletch-now/fletch-api) | Dated public OpenAPI snapshots, generated TypeScript types, API/freshness guides and webhook verifiers. |
 | [fletch-registry-data](https://github.com/fletch-now/fletch-registry-data) | Daily asset, lookalike and event snapshots with provenance; snapshot timestamps are not live observation times. |
 
+Markets exposes a [shared filter catalog](https://fletch.now/api/v1/chains/4663/markets/filters)
+for the website, API and agent clients. Read one token page with combined filters,
+then inspect each reading's source, time and unavailable reason.
+
 Start with [fletch.now](https://fletch.now), [Developers](https://fletch.now/developers),
 [API docs](https://fletch.now/api/v1/docs), [Registry](https://fletch.now/registry),
 [agent skill](https://fletch.now/skill.md), [agent overview](https://fletch.now/llms.txt) or the
